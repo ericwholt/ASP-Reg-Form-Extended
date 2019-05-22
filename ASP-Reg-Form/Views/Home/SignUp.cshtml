@@ -1,0 +1,35 @@
+﻿
+<body>
+
+    <form action="Summary" method="post">
+        <div class="form-group">
+            <label for="FullName">Full Name</label><br />
+            <input type="text" name="FullName"
+                   class="form-control" id="FullName" placeholder="Enter Full Name..." required />
+        </div>
+        <div class="form-group">
+            <label for="Email">Email</label><br />
+            <input type="email" name="Email" class="form-control" aria-describedby="emailHelp" id="Email" placeholder="Enter Email Address..." required />
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+            <label for="UserName">Username</label><br />
+            <input type="text" name="UserName" class="form-control" id="UserName" placeholder="Enter Username" required />
+        </div>
+        <div class="form-group">
+            <label for="Password">Password</label><br />
+            <input type="password" name="Password" class="form-control" id="Password"
+                   placeholder="Enter Password"
+                   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                   aria-describedby="passwordHelp"
+                   title="Must contain at least one number and one uppercase and lowercase letter,
+                  and at least 8 or more characters"
+                   required />
+            <small id="passwordHelp" class="form-text text-muted">
+                Must contain at least one number and one uppercase and lowercase letter,
+                and at least 8 or more characters
+            </small>
+        </div>
+        <input class="btn btn-primary" type="submit" value="Submit">
+    </form>
+</body>
