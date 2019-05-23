@@ -35,11 +35,13 @@ namespace ASP_Reg_Form.Controllers
 
         public ActionResult Summary(User user)
         {
-            ViewBag.FullName = user.FullName;
-            //ViewBag.Email = user.Email;
-            //ViewBag.UserName = user.UserName;
-            //ViewBag.Password = user.Password;
+            ViewBag.FullName = user.FirstName + " " + user.LastName;
             return View();
+        }
+
+        public ActionResult PrintModel(User user)
+        {
+            return View(user);
         }
     }
 }

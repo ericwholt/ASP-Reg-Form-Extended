@@ -1,11 +1,17 @@
 ﻿
 <body>
 
-    <form action="Summary" method="post">
+    <form action="PrintModel" method="post"
+          oninput='passwordConfirm.setCustomValidity(passwordConfirm.value != Password.value ? "Passwords do not match." : "")'>
         <div class="form-group">
-            <label for="FullName">Full Name</label><br />
-            <input type="text" name="FullName"
-                   class="form-control" id="FullName" placeholder="Enter Full Name..." required />
+            <label for="FirstName">First Name</label><br />
+            <input type="text" name="FirstName"
+                   class="form-control" id="FirstName" placeholder="Enter First Name..." required />
+        </div>
+        <div class="form-group">
+            <label for="LastName">Last Name</label><br />
+            <input type="text" name="LastName"
+                   class="form-control" id="LastName" placeholder="Enter First Name..." required />
         </div>
         <div class="form-group">
             <label for="Email">Email</label><br />
@@ -16,11 +22,11 @@
             <label for="UserName">Username</label><br />
             <input type="text" name="UserName" class="form-control" id="UserName" placeholder="Enter Username" required />
         </div>
-        <div class="form-group">
+        <fieldset class="form-group">
             <label for="Password">Password</label><br />
             <input type="password" name="Password" class="form-control" id="Password"
                    placeholder="Enter Password"
-                   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                   pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}+$"
                    aria-describedby="passwordHelp"
                    title="Must contain at least one number and one uppercase and lowercase letter,
                   and at least 8 or more characters"
@@ -29,6 +35,15 @@
                 Must contain at least one number and one uppercase and lowercase letter,
                 and at least 8 or more characters
             </small>
+            <input type="password" name="passwordConfirm" class="form-control" placeholder="Confirm Password" aria-describedby="passwordConfirm" />
+            <small id="passwordConfirm" class="form-text text-muted">
+                Both password fields must match.
+            </small>
+        </fieldset>
+        <div class="form-group">
+            <label for="Phone">Phone Number</label>
+            <input type="tel" name="Phone" class="form-control" pattern="([\+(]?(\d){2,}[)]?[- \.]?(\d){2,}[- \.]?(\d){2,}[- \.]?(\d){2,}[- \.]?(\d){2,})|([\+(]?(\d){2,}[)]?[- \.]?(\d){2,}[- \.]?(\d){2,}[- \.]?(\d){4,})|([\+(]?(\d){3,}[)]?[- \.]?(\d){3,}[- \.]?(\d){4,})" placeholder="555-555-5555"
+                   title="Must format like 555-555-5555"/>
         </div>
         <input class="btn btn-primary" type="submit" value="Submit">
     </form>
